@@ -7,7 +7,6 @@
  *
  * Return: pointer to string that can be freed using malloc
 */
-
 char *_itoa(int a)
 {
 	char *string, *p;
