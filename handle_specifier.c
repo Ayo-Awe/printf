@@ -24,6 +24,13 @@ char *handle_specifier(char specifier, va_list va)
 		p[0] = a;
 		p[1] = '\0';
 		return (p);
+	case '%':
+		p = malloc(sizeof(char) * 2);
+		if (p == NULL)
+			exit(1);
+		p[0] = '%';
+		p[1] = '\0';
+		return (p);
 	case 's':
 		tmp = va_arg(va, char *);
 		p = malloc((sizeof(char) * (_strlen(tmp) + 1)));
