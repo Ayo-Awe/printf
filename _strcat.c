@@ -6,38 +6,24 @@
  * @dest: destination string
  * @src: source string which would be at the end of destination
  *
- * Return: pointer to char that can be freed with "free"
+ * Return: pointer to char dest
 */
 char *_strcat(char *dest, char *src)
 {
-	int len_dest, len_src;
-	char *result, *c;
+	int len_dest, i;
 
 	len_dest = _strlen(dest);
-	len_src = _strlen(src);
 
-	result = malloc(sizeof(char) * (len_dest + len_src + 1));
-
-	if (!result)
-		exit(1);
-
-	c = result;
-
-	while (*dest)
-	{
-		*c = *dest;
-		c++;
-		dest++;
-	}
+	i = len_dest;
 
 	while (*src)
 	{
-		*c = *src;
-		c++;
+		dest[i] = *src;
 		src++;
+		i++;
 	}
 
-	*c = '\0';
+	dest[i] = '\0';
 
-	return (result);
+	return (dest);
 }
