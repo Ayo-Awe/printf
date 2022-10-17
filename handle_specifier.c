@@ -26,11 +26,12 @@ char *handle_specifier(char specifier, va_list va)
 		return (p);
 	case 's':
 		tmp = va_arg(va, char *);
-		p = malloc((sizeof(char) * _strlen(tmp)));
+		p = malloc((sizeof(char) * (_strlen(tmp) + 1)));
 		if (p == NULL)
 			exit(1);
 		*p = '\0';
-		return (_strcat(p, tmp));
+		_strcat(p, tmp);
+		return (p);
 
 	case 'd':
 	case 'i':
