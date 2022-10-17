@@ -6,5 +6,5 @@ int _abs(int d);
 char *_itoa(int a);
 int number_of_digits(unsigned int d);
 void reverse_string(char *);
-char *strcat(char *, char *);
+char *_strcat(char *, char *);
 #endif
