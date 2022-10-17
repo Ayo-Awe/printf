@@ -10,4 +10,6 @@ void reverse_string(char *);
 char *_strcat(char *, char *);
 char *handle_specifier(char specifier, va_list va);
 char get_specifier(char *s);
+int _puts(char *);
+int _printf(const char *format, ...);
 #endif

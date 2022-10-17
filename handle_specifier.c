@@ -12,7 +12,7 @@
 char *handle_specifier(char specifier, va_list va)
 {
 	int a;
-	char *p;
+	char *p, *tmp;
 
 	switch (specifier)
 	{
@@ -23,7 +23,10 @@ char *handle_specifier(char specifier, va_list va)
 		p[1] = '\0';
 		return (p);
 	case 's':
-		return (va_arg(va, char *));
+		tmp = va_arg(va, char *);
+		p = malloc((sizeof(char) * _strlen(tmp)));
+		*p = '\0';
+		return (_strcat(p, tmp));
 
 	case 'd':
 	case 'i':

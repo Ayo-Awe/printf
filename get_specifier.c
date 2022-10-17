@@ -7,7 +7,7 @@
 */
 char get_specifier(char *s)
 {
-	if(*s != '%')
+	if (*s != '%')
 		return ('\0');
 
 	s++;
